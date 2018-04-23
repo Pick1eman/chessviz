@@ -184,7 +184,7 @@ void board()
 	bq = 24
 	bk = 25
 	*/
-	
+	char figure; 
 	char move[4] = {'e', '2', 'e', '4'};
 	unsigned short int board[8][8] = {{21, 22, 23, 24, 25, 23, 22, 21},
 									  {20},
@@ -218,4 +218,51 @@ void board()
 	printf("    *  | A | B | C | D | E | F | G | H |  *    \n");
 	printf("\n\n");
 	
+}
+
+int table_1(char *a)
+{
+		switch(*a){
+		case 'a':
+			return 0;
+		case 'b':
+			return 1;
+		case 'c':
+			return 2;
+		case 'd':
+			return 3;
+		case 'e':
+			return 4;
+		case 'f':
+			return 5;
+		case 'g':
+			return 6;
+		case 'h':
+			return 7;
+		{
+	}
+	
+	
+	
+	
+int table_2(char *b)
+{	
+		switch(*b){
+		case '1':
+			return 0;
+		case '2':
+			return 1;
+		case '3':
+			return 2;
+		case '4':
+			return 3;
+		case '5':
+			return 4;
+		case '6':
+			return 5;
+		case '7':
+			return 6;
+		case '8':
+			return 7;
+		}
 }
