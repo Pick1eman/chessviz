@@ -50,14 +50,16 @@ char checknum(unsigned short int num_figure)
 			return 'Q';
 		case 15:
 			return 'K';
+		default:
+			return '!';
 	}
 }
 
 
-char code_to_letter(unsigned short int i1, unsigned short int i2)
+char code_to_letter(unsigned short int i1, unsigned short int j1)
 {
 	char empty = '!';
-	if ((i + j)%2 != 0) {
+	if ((i1 + j1)%2 != 0) {
 		empty = '#';
 	} else {
 		empty = ' ';
@@ -90,15 +92,18 @@ char code_to_letter(unsigned short int i1, unsigned short int i2)
 			return 'K';
 		case 0:
 			return empty;
+		default:
+			return '!';
 	}
 }
 
 
-char Ini_cells(unsigned short int i1,unsigned short int j1)
+void Ini_cells(unsigned short int i1,unsigned short int j1)
 {
-	char figure;
+	//char figure;
 	unsigned short int num_figure;
 	char move[2];
+	unsigned short int i2, j2;
 	/*unsigned short int board[8][8] = {{21, 22, 23, 24, 25, 23, 22, 21},
 									  {20, 20, 20, 20, 20, 20, 20, 20},
 									  {0, 0, 0, 0, 0, 0, 0, 0},
@@ -108,125 +113,135 @@ char Ini_cells(unsigned short int i1,unsigned short int j1)
 									  {10, 10, 10, 10, 10, 10, 10, 10},
 									  {11, 12, 13, 14, 15, 13, 12, 11}};*/
 	num_figure = board[i1][j1];
-	if (num_fugure == 21) {
-		printf("Введите координату,куда хотите переместить ладью: ");
-		scanf("%c %c", &move[0], &move[1]);
+	if (num_figure == 21) {
+		printf("Введите координату,куда хотите переместить ладью: \n");
+		scanf("%c", &move[1]);
+		while ((move[1] < 'a') || (move[1] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%c", &move[1]);
+		}
+		scanf("%c", &move[0]);
+		while ((move[0] < '1') || (move[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%c", &move[0]);
+		}
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 22) {
+		if (num_figure == 22) {
 		printf("Введите координату,куда хотите переместить коня: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 23) {
+		if (num_figure == 23) {
 		printf("Введите координату,куда хотите переместить слона: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 24) {
+		if (num_figure == 24) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 25) {
+		if (num_figure == 25) {
 		printf("Введите координату,куда хотите переместить короля: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 20) {
+		if (num_figure == 20) {
 		printf("Введите координату,куда хотите переместить пешку: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 11) {
+		if (num_figure == 11) {
 		printf("Введите координату,куда хотите переместить ладью: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 12) {
+		if (num_figure == 12) {
 		printf("Введите координату,куда хотите переместить коня: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 13) {
+		if (num_figure == 13) {
 		printf("Введите координату,куда хотите переместить слона: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
-	}	if (num_fugure == 14) {
+		//figure = checknum(num_figure);
+		//return figure;
+	}	if (num_figure == 14) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 15) {
+		if (num_figure == 15) {
 		printf("Введите координату,куда хотите переместить короля: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}
-		if (num_fugure == 10) {
+		if (num_figure == 10) {
 		printf("Введите координату,куда хотите переместить пешку: ");
 		scanf("%c %c", &move[0], &move[1]);
 		i2 = table_1(move[1]);
 		j2 = table_2(move[0]);
 		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
 		board[i1][j1] = 0;
-		figure = checknum(num_figure);
-		return figure;
+		//figure = checknum(num_figure);
+		//return figure;
 	}	
+	//return '!';
 	
 }
 
@@ -234,10 +249,12 @@ char Ini_cells(unsigned short int i1,unsigned short int j1)
 void board_(unsigned short int i1,unsigned short int j1)
 {
 
-	char figure; 
-	
-	
-	figure = Ini_cells(i1, j1);//Для перемещения фигуры
+
+	printf("jdfsadkfjsadfjaskjfajdia\n");
+	//print_board(i1, j1);
+	Ini_cells(i1, j1);//Для перемещения фигуры	
+	printf("jdfsadkfjsadfjaskjfajdia\n");
+
 	
 
 	
@@ -245,10 +262,9 @@ void board_(unsigned short int i1,unsigned short int j1)
 
 
 
-void print_board(unsigned short int i1,unsigned short int j1)
+void print_board()
 {
-	int num_figure;
-	num_figure = board[i1][j1];
+
 	printf("\n\n");
 	printf("    *  | A | B | C | D | E | F | G | H |  *    \n");
 	printf("    _   ___ ___ ___ ___ ___ ___ ___ ___   _    \n");
@@ -282,9 +298,9 @@ void print_board(unsigned short int i1,unsigned short int j1)
 	
 }
 
-unsigned short int table_1(char *a)//Преобразование символа в число
+unsigned short int table_1(char a)//Преобразование символа в число
 {
-		switch(*a){
+		switch(a){
 		case 'a':
 			return 0;
 		case 'b':
@@ -301,15 +317,17 @@ unsigned short int table_1(char *a)//Преобразование символа
 			return 6;
 		case 'h':
 			return 7;
+		default:
+			return -1;
 		}
 }
 	
 	
 	
 	
-unsigned short int table_2(char *b)//Преобразование символа в число
+unsigned short int table_2(char b)//Преобразование символа в число
 {	
-		switch(*b){
+		switch(b){
 		case '1':
 			return 7;
 		case '2':
@@ -326,5 +344,7 @@ unsigned short int table_2(char *b)//Преобразование символа
 			return 1;
 		case '8':
 			return 0;
+		default:
+			return -1;
 		}
 }

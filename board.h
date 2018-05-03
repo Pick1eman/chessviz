@@ -1,8 +1,16 @@
 #include <stdio.h>
 
 
-char Ini_cells(int i, int j);
+void Ini_cells(unsigned short int i1,unsigned short int j1);
 
-char checknum(int num_figure);
+char checknum(unsigned short int num_figure);
 
-void board();
+void board_(unsigned short int i1,unsigned short int j1);
+
+char code_to_letter(unsigned short int i1, unsigned short int j1);
+
+void print_board();
+
+unsigned short int table_1(char a);
+
+unsigned short int table_2(char b);
