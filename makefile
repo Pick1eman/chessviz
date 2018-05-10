@@ -7,4 +7,8 @@ main.o:main.c
 board.o:board.c
 	gcc -Wall -c -o board.o board.c
 	
-	
+dir:
+	mkdir build
+	mkdir bin
+clean:
+	rm build/*.o

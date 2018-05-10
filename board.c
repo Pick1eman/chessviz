@@ -80,14 +80,13 @@ char code_to_letter(unsigned short int i1, unsigned short int j1)
 }
 
 
-void Ini_cells(unsigned short int i1,unsigned short int j1)
+void Ini_cells(unsigned short int i1,unsigned short int j1, FILE *log)
 {
 printf("------------\n");
 	unsigned short int num_figure;
 	char move1[3];
 	char move2[3];
 	unsigned short int i2, j2;
-
 	num_figure = board[i1][j1];
 	printf("%d\n", num_figure);
 	if (num_figure == 21) {
@@ -104,7 +103,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 
 	}
@@ -122,7 +121,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 23) {
@@ -139,7 +138,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 24) {
@@ -156,7 +155,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 25) {
@@ -173,7 +172,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 20) {
@@ -190,7 +189,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 11) {
@@ -207,7 +206,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 12) {
@@ -224,7 +223,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 13) {
@@ -241,7 +240,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 		
 	}	if (num_figure == 14) {
@@ -258,7 +257,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 15) {
@@ -275,7 +274,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}
 		if (num_figure == 10) {
@@ -292,7 +291,7 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		board[i2][j2] = num_figure;
+		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 	}	
 
@@ -300,12 +299,12 @@ printf("------------\n");
 }
 
 
-void board_(unsigned short int i1,unsigned short int j1)
+void board_(unsigned short int i1,unsigned short int j1, FILE *log)
 {
 
 
 	printf("------------\n");
-	Ini_cells(i1, j1);//Для перемещения фигуры	
+	Ini_cells(i1, j1, log);//Для перемещения фигуры	
 	
 
 	
