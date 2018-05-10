@@ -3,28 +3,10 @@
 
 extern unsigned short int board[8][8];
 
-//extern short ch_board[8][8];
+
 
 char checknum(unsigned short int num_figure)
 {
-		/*
-	none = 0
-	
-	wp = 10
-	wr = 11
-	wn = 12
-	wb = 13
-	wq = 14
-	wk = 15
-	
-	bp = 20
-	br = 21
-	bn = 22
-	bb = 23
-	bq = 24
-	bk = 25
-	*/
-	//char figure;
 	switch(num_figure){
 		case 21:
 			return 'r';
@@ -100,148 +82,220 @@ char code_to_letter(unsigned short int i1, unsigned short int j1)
 
 void Ini_cells(unsigned short int i1,unsigned short int j1)
 {
-	//char figure;
+printf("------------\n");
 	unsigned short int num_figure;
-	char move[2];
+	char move1[3];
+	char move2[3];
 	unsigned short int i2, j2;
-	/*unsigned short int board[8][8] = {{21, 22, 23, 24, 25, 23, 22, 21},
-									  {20, 20, 20, 20, 20, 20, 20, 20},
-									  {0, 0, 0, 0, 0, 0, 0, 0},
-									  {0, 0, 0, 0, 0, 0, 0, 0},
-									  {0, 0, 0, 0, 0, 0, 0, 0},
-									  {0, 0, 0, 0, 0, 0, 0, 0},
-									  {10, 10, 10, 10, 10, 10, 10, 10},
-									  {11, 12, 13, 14, 15, 13, 12, 11}};*/
+
 	num_figure = board[i1][j1];
+	printf("%d\n", num_figure);
 	if (num_figure == 21) {
 		printf("Введите координату,куда хотите переместить ладью: \n");
-		scanf("%c", &move[1]);
-		while ((move[1] < 'a') || (move[1] > 'h')) {
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
-			scanf("%c", &move[1]);
+			scanf("%s", &move1[0]);
 		}
-		scanf("%c", &move[0]);
-		while ((move[0] < '1') || (move[0] > '8')) {
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
 			printf("Ошибка ввода,повторите попытку\n");
-			scanf("%c", &move[0]);
+			scanf("%s", &move2[0]);
 		}
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
+
 	}
 		if (num_figure == 22) {
 		printf("Введите координату,куда хотите переместить коня: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 23) {
 		printf("Введите координату,куда хотите переместить слона: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 24) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 25) {
 		printf("Введите координату,куда хотите переместить короля: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 20) {
 		printf("Введите координату,куда хотите переместить пешку: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 11) {
 		printf("Введите координату,куда хотите переместить ладью: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 12) {
 		printf("Введите координату,куда хотите переместить коня: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 13) {
 		printf("Введите координату,куда хотите переместить слона: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
+		
 	}	if (num_figure == 14) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 15) {
 		printf("Введите координату,куда хотите переместить короля: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}
 		if (num_figure == 10) {
 		printf("Введите координату,куда хотите переместить пешку: ");
-		scanf("%c %c", &move[0], &move[1]);
-		i2 = table_1(move[1]);
-		j2 = table_2(move[0]);
-		board[i2][j2] = num_figure;//num_figure = board[i2][j2];
+		scanf("%s", &move1[0]);
+		while ((move1[0] < 'a') || (move1[0] > 'h')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move1[0]);
+		}
+		scanf("%s", &move2[0]);
+		while ((move2[0] < '1') || (move2[0] > '8')) {
+			printf("Ошибка ввода,повторите попытку\n");
+			scanf("%s", &move2[0]);
+		}
+		i2 = table_1(move1[0]);
+		j2 = table_2(move2[0]);
+		board[i2][j2] = num_figure;
 		board[i1][j1] = 0;
-		//figure = checknum(num_figure);
-		//return figure;
 	}	
-	//return '!';
+
 	
 }
 
@@ -250,11 +304,8 @@ void board_(unsigned short int i1,unsigned short int j1)
 {
 
 
-	printf("jdfsadkfjsadfjaskjfajdia\n");
-	//print_board(i1, j1);
+	printf("------------\n");
 	Ini_cells(i1, j1);//Для перемещения фигуры	
-	printf("jdfsadkfjsadfjaskjfajdia\n");
-
 	
 
 	
