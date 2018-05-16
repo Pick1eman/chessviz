@@ -1,11 +1,11 @@
-main: main.o board.o
-	gcc -Wall -o main main.o board.o
+bin/chsv: build/main.o build/board.o
+	gcc -Wall -o bin/chsv build/main.o build/board.o
 	
-main.o:main.c
-	gcc -Wall -c -o main.o main.c
+build/main.o:src/main.c
+	gcc -Wall -c -o build/main.o src/main.c
 	
-board.o:board.c
-	gcc -Wall -c -o board.o board.c
+build/board.o:src/board.c
+	gcc -Wall -c -o build/board.o src/board.c
 	
 dir:
 	mkdir build
