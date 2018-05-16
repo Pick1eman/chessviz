@@ -80,10 +80,11 @@ char code_to_letter(unsigned short int i1, unsigned short int j1)
 }
 
 
-void Ini_cells(unsigned short int i1,unsigned short int j1, FILE *log)
+void Ini_cells(unsigned short int i1,unsigned short int j1)
 {
-printf("------------\n");
+	FILE *log;
 	unsigned short int num_figure;
+	unsigned short int num_figure2;
 	char move1[3];
 	char move2[3];
 	unsigned short int i2, j2;
@@ -103,8 +104,12 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 
 	}
 		if (num_figure == 22) {
@@ -189,8 +194,12 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
 		if (num_figure == 11) {
 		printf("Введите координату,куда хотите переместить ладью: ");
@@ -291,20 +300,24 @@ printf("------------\n");
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}	
 
 	
 }
 
 
-void board_(unsigned short int i1,unsigned short int j1, FILE *log)
+void board_(unsigned short int i1,unsigned short int j1)
 {
 
 
 	printf("------------\n");
-	Ini_cells(i1, j1, log);//Для перемещения фигуры	
+	Ini_cells(i1, j1);//Для перемещения фигуры	
 	
 
 	
@@ -398,3 +411,14 @@ unsigned short int table_2(char b)//Преобразование символа 
 			return -1;
 		}
 }
+
+char move_to(unsigned short int figure)
+{
+	if (figure == 0) {
+		return '-';
+	} else {
+		return 'x';
+	}
+}
+
+
