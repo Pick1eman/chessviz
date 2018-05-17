@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "board.h"
+#include "check_move.h"
 
 extern unsigned short int board[8][8];
 
