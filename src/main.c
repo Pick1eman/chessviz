@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "board.h"
-#include guard
 
 unsigned short int board[8][8] = {{21, 22, 23, 24, 25, 23, 22, 21},
 								  {20, 20, 20, 20, 20, 20, 20, 20},
