@@ -17,16 +17,18 @@ build/test/main.o:test/main.c
 
 
 bin/chsv: build/main.o build/board.o
-	gcc -Wall -o bin/chsv build/main.o build/board.o
+	$(CC) $(FLAG) -o bin/chsv build/main.o build/board.o
 	
 build/main.o:src/main.c
-	gcc -Wall -c -o build/main.o src/main.c
+	$(CC) $(FLAG) -c -o build/main.o src/main.c
 	
 build/board.o:src/board.c
-	gcc -Wall -c -o build/board.o src/board.c
+	$(CC) $(FLAG) -c -o build/board.o src/board.c
 	
 dir:
 	mkdir build
 	mkdir bin
+	
+.PHONY: clean
 clean:
-	rm build/*.o
+	rm -rf build/*.o

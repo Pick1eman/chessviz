@@ -108,7 +108,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 		log = fopen("./logs/user.log", "a+");
-		fprintf(log, "%c%c%c", move_to(num_figure2), move1[0], move2[0]);
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
 		fclose(log);
 
 	}
@@ -126,8 +126,12 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
 		if (num_figure == 23) {
 		printf("Введите координату,куда хотите переместить слона: ");
@@ -143,9 +147,14 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
+	
 		if (num_figure == 24) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
 		scanf("%s", &move1[0]);
@@ -160,9 +169,14 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
+	
 		if (num_figure == 25) {
 		printf("Введите координату,куда хотите переместить короля: ");
 		scanf("%s", &move1[0]);
@@ -177,9 +191,14 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
+	
 		if (num_figure == 20) {
 		printf("Введите координату,куда хотите переместить пешку: ");
 		scanf("%s", &move1[0]);
@@ -198,9 +217,10 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 		log = fopen("./logs/user.log", "a+");
-		fprintf(log, "%c%c%c", move_to(num_figure2), move1[0], move2[0]);
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
 		fclose(log);
 	}
+	
 		if (num_figure == 11) {
 		printf("Введите координату,куда хотите переместить ладью: ");
 		scanf("%s", &move1[0]);
@@ -215,9 +235,14 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
+	
 		if (num_figure == 12) {
 		printf("Введите координату,куда хотите переместить коня: ");
 		scanf("%s", &move1[0]);
@@ -232,9 +257,14 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
+	
 		if (num_figure == 13) {
 		printf("Введите координату,куда хотите переместить слона: ");
 		scanf("%s", &move1[0]);
@@ -249,8 +279,12 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 		
 	}	if (num_figure == 14) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
@@ -266,9 +300,14 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
+	
 		if (num_figure == 15) {
 		printf("Введите координату,куда хотите переместить короля: ");
 		scanf("%s", &move1[0]);
@@ -283,9 +322,14 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
+		log = fopen("./logs/user.log", "a+");
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
+		fclose(log);
 	}
+	
 		if (num_figure == 10) {
 		printf("Введите координату,куда хотите переместить пешку: ");
 		scanf("%s", &move1[0]);
@@ -304,7 +348,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
 		log = fopen("./logs/user.log", "a+");
-		fprintf(log, "%c%c%c", move_to(num_figure2), move1[0], move2[0]);
+		fprintf(log, "%c%c%c\n", move_to(num_figure2), move1[0], move2[0]);
 		fclose(log);
 	}	
 
