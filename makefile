@@ -16,8 +16,8 @@ build/test/main.o:test/main.c
 
 
 
-bin/chsv: build/main.o build/board.o
-	$(CC) $(FLAG) -o bin/chsv build/main.o build/board.o
+bin/chsv: build/main.o build/board.o build/check_move.o
+	$(CC) $(FLAG) -o bin/chsv build/main.o build/board.o build/check_move.o
 	
 build/main.o:src/main.c
 	$(CC) $(FLAG) -c -o build/main.o src/main.c
