@@ -1,5 +1,5 @@
 #define CTEST_MAIN
-
+#include "check_move.h"
 #include <stdio.h>
 #include <ctype.h>
 #include "ctest.h"
@@ -19,36 +19,22 @@ CTEST(code_to_letter, correct)
 {
 	char result = code_to_letter(6, 4);
 	char expected = 'P';
-	ASSERT_EQUAL(expected, result);
+	ASSERT_EQUAL_U(expected, result);
 }
 
 CTEST(code_to_letter1, correct)
 {
 	char result = code_to_letter(4, 3);
 	char expected = '#';
-	ASSERT_EQUAL(expected, result);
-}
-
-CTEST(move_to, correct)
-{
-	char result = move_to(0);
-	char expected = '-';
-	ASSERT_EQUAL(expected, result);
+	ASSERT_EQUAL_U(expected, result);
 }
 
 
-CTEST(move_to, correct)
+CTEST(check_move_pawn_white, correct)
 {
-	char result = move_to(0);
-	char expected = '-';
-	ASSERT_EQUAL(expected, result);
-}
-
-CTEST(move_to1, correct)
-{
-	char result = move_to(10);
-	char expected = 'x';
-	ASSERT_EQUAL(expected, result);
+	int result = check_move_pawn_white(6, 4, 5, 3);
+	int expected = 1;
+	ASSERT_EQUAL_U(expected, result);
 }
 
 

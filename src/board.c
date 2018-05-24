@@ -95,6 +95,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	printf("%d\n", num_figure);
 	if (num_figure == 21) {
 		printf("Введите координату,куда хотите переместить ладью: \n");
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -107,6 +108,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -117,6 +120,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	}
 		if (num_figure == 22) {
 		printf("Введите координату,куда хотите переместить коня: ");
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -129,6 +133,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -138,6 +144,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	}
 		if (num_figure == 23) {
 		printf("Введите координату,куда хотите переместить слона: ");
+		while (check == 1){
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -148,6 +155,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 			printf("Ошибка ввода,повторите попытку\n");
 			scanf("%s", &move2[0]);
 		}
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
 		num_figure2 = board[j2][i2];
@@ -160,6 +169,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	
 		if (num_figure == 24) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -172,6 +182,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -182,6 +194,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	
 		if (num_figure == 25) {
 		printf("Введите координату,куда хотите переместить короля: ");
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -194,6 +207,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -218,6 +233,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
 		check = check_move_pawn_black(i1, j1, j2, i2);
+		check = check_move_base(i1, j1, j2, i2);
 		}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
@@ -229,6 +245,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	
 		if (num_figure == 11) {
 		printf("Введите координату,куда хотите переместить ладью: ");
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -241,6 +258,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -251,6 +270,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	
 		if (num_figure == 12) {
 		printf("Введите координату,куда хотите переместить коня: ");
+		while (check == 1) { 
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -263,6 +283,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -273,6 +295,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	
 		if (num_figure == 13) {
 		printf("Введите координату,куда хотите переместить слона: ");
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -285,6 +308,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -294,6 +319,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		
 	}	if (num_figure == 14) {
 		printf("Введите координату,куда хотите переместить ферзя: ");
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -306,6 +332,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -316,6 +344,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	
 		if (num_figure == 15) {
 		printf("Введите координату,куда хотите переместить короля: ");
+		while (check == 1){
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -328,6 +357,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
+		check = check_move_base(i1, j1, j2, i2);
+	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
@@ -352,6 +383,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
 		check = check_move_pawn_white(i1, j1, j2, i2);
+		check = check_move_base(i1, j1, j2, i2);
 		}
 		if (check == -1) {
 			return;

@@ -50,3 +50,14 @@ int check_move_pawn_black(unsigned short int a, unsigned short int b, unsigned s
 
 	return 0;
 }
+
+int check_move_base(unsigned short int a, unsigned short int b, unsigned short int c, unsigned short int d)
+{
+	if ((c > 7) || (c < 0) || (d < 0) || (d > 7)) {
+		printf("Фигура не может так ходить\n");
+		return 1;
+	}
+	return 0;
+}
+
+
