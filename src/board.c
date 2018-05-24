@@ -204,7 +204,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 	
 		if (num_figure == 20) {
 		printf("Введите координату,куда хотите переместить пешку: ");
-		//while (check == 1) {
+		while (check == 1) {
 		scanf("%s", &move1[0]);
 		while ((move1[0] < 'a') || (move1[0] > 'h')) {
 			printf("Ошибка ввода,повторите попытку\n");
@@ -217,8 +217,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		//check = check_move_pawn(i1,j1,i2,j2);
-		//}
+		check = check_move_pawn_black(i1, j1, j2, i2);
+		}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
 		board[i1][j1] = 0;
