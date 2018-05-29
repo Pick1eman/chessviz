@@ -29,9 +29,8 @@ build/board.o:src/board.c
 	$(CC) $(FLAG) -c -o build/board.o src/board.c
 	
 dir:
-	mkdir build
-	mkdir bin
-	mkdir build/test	
+	mkdir build/test
+	mkdir bin	
 
 .PHONY: clean
 clean:
