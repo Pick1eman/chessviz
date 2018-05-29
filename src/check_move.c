@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 
-extern unsigned short int board[8][8];
+extern int board[8][8];
 
-int check_move_pawn_white(unsigned short int a, unsigned short int b, unsigned short int c, unsigned short int d)
+int check_move_pawn_white(int a, int b, int c, int d)
 {
 	printf("(%u,%u) (%u,%u) ход=(%d)", a, b, c, d, (a-c)); 
 	if ((((board[a-1][b-1] == 0) && (a-1 == c)) && ((board[a-1][b-1] == 0) && (b-1 == d))) || ((board[a-1][b+1] == 0 && (a-1 == c)) && 
@@ -28,7 +28,7 @@ int check_move_pawn_white(unsigned short int a, unsigned short int b, unsigned s
 }
 
 
-int check_move_pawn_black(unsigned short int a, unsigned short int b, unsigned short int c, unsigned short int d)
+int check_move_pawn_black(int a, int b, int c, int d)
 {
 	printf("(%u,%u) (%u,%u) ход=(%d)", a, b, c, d, (c-a)); 
 	if ((((board[a+1][b-1] == 0) && (a+1 == c)) && ((board[a+1][b-1] == 0) && (b-1 == d))) || ((board[a+1][b+1] == 0 && (a+1 == c)) && 
@@ -51,7 +51,7 @@ int check_move_pawn_black(unsigned short int a, unsigned short int b, unsigned s
 	return 0;
 }
 
-int check_move_base(unsigned short int a, unsigned short int b, unsigned short int c, unsigned short int d)
+int check_move_base(int a, int b, int c, int d)
 {
 	if ((c > 7) || (c < 0) || (d < 0) || (d > 7)) {
 		printf("Фигура не может так ходить\n");

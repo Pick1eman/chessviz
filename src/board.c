@@ -2,11 +2,11 @@
 #include "board.h"
 #include "check_move.h"
 
-extern unsigned short int board[8][8];
+extern int board[8][8];
 
 
 
-char checknum(unsigned short int num_figure)
+char checknum(int num_figure)
 {
 	switch(num_figure){
 		case 21:
@@ -39,7 +39,7 @@ char checknum(unsigned short int num_figure)
 }
 
 
-char code_to_letter(unsigned short int i1, unsigned short int j1)
+char code_to_letter(int i1, int j1)
 {
 	char empty = '!';
 	if ((i1 + j1)%2 != 0) {
@@ -81,14 +81,14 @@ char code_to_letter(unsigned short int i1, unsigned short int j1)
 }
 
 
-void Ini_cells(unsigned short int i1,unsigned short int j1)
+void Ini_cells(int i1, int j1)
 {
 	FILE *log;
-	unsigned short int num_figure;
-	unsigned short int num_figure2;
+	int num_figure;
+	int num_figure2;
 	char move1[3];
 	char move2[3];
-	unsigned short int i2, j2;
+	int i2, j2;
 	int check = 1;
 
 	num_figure = board[i1][j1];
@@ -232,8 +232,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		check = check_move_pawn_black(i1, j1, j2, i2);
 		check = check_move_base(i1, j1, j2, i2);
+		check = check_move_pawn_black(i1, j1, j2, i2);
 		}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
@@ -382,8 +382,8 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 		}
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
-		check = check_move_pawn_white(i1, j1, j2, i2);
 		check = check_move_base(i1, j1, j2, i2);
+		check = check_move_pawn_white(i1, j1, j2, i2);
 		}
 		if (check == -1) {
 			return;
@@ -400,7 +400,7 @@ void Ini_cells(unsigned short int i1,unsigned short int j1)
 }
 
 
-void board_(unsigned short int i1,unsigned short int j1)
+void board_(int i1,int j1)
 {
 
 
@@ -449,7 +449,7 @@ void print_board()
 	
 }
 
-unsigned short int table_1(char a)//Преобразование символа в число
+int table_1(char a)//Преобразование символа в число
 {
 		switch(a){
 		case 'a':
@@ -476,7 +476,7 @@ unsigned short int table_1(char a)//Преобразование символа 
 	
 	
 	
-unsigned short int table_2(char b)//Преобразование символа в число
+int table_2(char b)//Преобразование символа в число
 {	
 		switch(b){
 		case '1':
@@ -500,7 +500,7 @@ unsigned short int table_2(char b)//Преобразование символа 
 		}
 }
 
-char move_to(unsigned short int figure)
+char move_to(int figure)
 {
 	if (figure == 0) {
 		return '-';

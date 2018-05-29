@@ -1,5 +1,5 @@
-int check_move_pawn_white(unsigned short int a, unsigned short int b, unsigned short int c, unsigned short int d);
+int check_move_pawn_white(int a, int b, int c, int d);
 
-int check_move_pawn_black(unsigned short int a, unsigned short int b, unsigned short int c, unsigned short int d);
+int check_move_pawn_black(int a, int b, int c, int d);
 
-int check_move_base(unsigned short int a, unsigned short int b, unsigned short int c, unsigned short int d);
+int check_move_base(int a, int b, int c, int d);
