@@ -29,38 +29,19 @@ CTEST(code_to_letter1, correct)
 	ASSERT_EQUAL(expected, result);
 }
 
-CTEST(move_to, correct)
+CTEST(code_to_letter2, correct)
 {
-	char result = move_to(0);
-	char expected = '-';
+	char result = code_to_letter(12, 3);
+	char expected = '!';
 	ASSERT_EQUAL(expected, result);
 }
 
-
-CTEST(move_to, correct)
+CTEST(check_pawn1, correct)
 {
-	char result = move_to(0);
-	char expected = '-';
+	char result = code_to_letter(4, 3);
+	char expected = '#';
 	ASSERT_EQUAL(expected, result);
 }
-
-CTEST(move_to1, correct)
-{
-	char result = move_to(10);
-	char expected = 'x';
-	ASSERT_EQUAL(expected, result);
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 

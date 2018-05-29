@@ -28,6 +28,7 @@ build/board.o:src/board.c
 dir:
 	mkdir build
 	mkdir bin
+	mkdir build/test
 	
 .PHONY: clean
 clean:
