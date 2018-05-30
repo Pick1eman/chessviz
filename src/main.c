@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include "board.h"
-#include guard
 
-unsigned short int board[8][8] = {{21, 22, 23, 24, 25, 23, 22, 21},
+int board[8][8] = {{21, 22, 23, 24, 25, 23, 22, 21},
 								  {20, 20, 20, 20, 20, 20, 20, 20},
 								  {0, 0, 0, 0, 0, 0, 0, 0},
 								  {0, 0, 0, 0, 0, 0, 0, 0},
@@ -19,7 +18,7 @@ int main()
 	fclose(log);
 	printf("Добро пожаловать в шахматы. Введите '1' если хотите играть; если хотите отменить игру, введите любое число\n");
 	char i1[3], j1[3];
-	unsigned short int i2, j2;
+	int i2, j2;
 	int a;
 	scanf("%d", &a);
 	while (a == 1) {

@@ -1,5 +1,6 @@
-chsv
+bin/*
 *.[ao]
 #*#
 *~
 .nfs*
+*.log
