@@ -109,6 +109,7 @@ void Ini_cells(int i1, int j1)
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
 		check = check_move_base(i1, j1, j2, i2);
+		check = check_move_rook(i1, j1, j2, i2);
 	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;
@@ -259,6 +260,7 @@ void Ini_cells(int i1, int j1)
 		i2 = table_1(move1[0]);
 		j2 = table_2(move2[0]);
 		check = check_move_base(i1, j1, j2, i2);
+		check = check_move_rook(i1, j1, j2, i2);
 	}
 		num_figure2 = board[j2][i2];
 		board[j2][i2] = num_figure;

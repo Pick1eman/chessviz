@@ -61,3 +61,17 @@ int check_move_base(int a, int b, int c, int d)
 }
 
 
+int check_move_rook(int a, int b, int c, int d)
+{
+	printf("(%u,%u) (%u,%u) ход=(%d)", a, b, c, d, (a-c)); 
+	if ((!(a != c) && (b == c)) || (!(a == c) && (b != d))) {
+		printf("Ладья не может так ходить\n");
+		return 1;
+	}
+	if ((a == c) && (b == d)) {
+		return -1;
+	}
+	return 0;
+
+}
+
