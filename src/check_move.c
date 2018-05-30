@@ -75,3 +75,18 @@ int check_move_rook(int a, int b, int c, int d)
 
 }
 
+
+int check_move_king(int a, int b, int c, int d)
+{
+	printf("(%u,%u) (%u,%u) ход=(%d)", a, b, c, d, (a-c));
+	if (((a == c - 1) && ((b == d - 1) || (b == d) || (b == d + 1))) || ((a == c + 1) && ((b == d - 1) || (b == d) || (b == d + 1))) || ((a == c) && ((b == d - 1) || (b == d + 1)))) {printf("----1----\n");
+		return 0;
+	} else {
+		if ((a == c) && (b == d)) {
+			return -1;
+		}
+		printf("Король не может так ходить\n");
+		return 1;
+	}
+
+}
